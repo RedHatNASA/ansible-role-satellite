@@ -1,0 +1,4 @@
+---
+# defaults file for ansible-role-satellite
+sat_username: admin
+sat_password: redhat
