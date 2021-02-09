@@ -2,3 +2,5 @@
 # defaults file for ansible-role-satellite
 sat_username: admin
 sat_password: redhat
+sat_org: NASA_JPL
+sat_location: Cali
