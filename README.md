@@ -1,7 +1,7 @@
 ansible-role-satellite
 =========
 
-A role for deploying Red Hat Satellite 6.7.
+A role for deploying Red Hat Satellite 6.8.
 
 Requirements
 ------------

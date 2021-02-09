@@ -12,13 +12,13 @@
     name: '*'
     state: disabled
 
-- name: Enable all repositories needed for satellite 6.7
+- name: Enable all repositories needed for satellite 6.8
   rhsm_repository:
     name: "{{ item }}"
     state: enabled
   with_items:
     - rhel-7-server-rpms
-    - rhel-7-server-satellite-6.7-rpms
+    - rhel-7-server-satellite-6.8-rpms
     - rhel-7-server-satellite-maintenance-6-rpms
     - rhel-server-rhscl-7-rpms
-    - rhel-7-server-ansible-2.8-rpms
+    - rhel-7-server-ansible-2.9-rpms
