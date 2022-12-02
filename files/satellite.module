@@ -1,0 +1,5 @@
+[satellite]
+name=satellite
+stream=el8
+profiles=
+state=enabled

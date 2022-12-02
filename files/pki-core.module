@@ -1,0 +1,5 @@
+[pki-core]
+name=pki-core
+stream=10.6
+profiles=
+state=enabled

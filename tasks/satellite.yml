@@ -1,18 +1,25 @@
 ---
 # tasks file for updating host and install satellite
 
+- name: Add hostname to /etc/hosts if defined
+  ansible.builtin.lineinfile:
+    path: /etc/hosts
+    line: '{{ ansible_default_ipv4.address }}    {{ sat_hostname }}'
+    insertbefore: BOF
+  when: sat_hostname is defined
+
 - name: Upgrade all host packages
-  yum:
+  ansible.builtin.yum:
     name: '*'
     state: latest
 
 - name: Install the latest version of Satellite
-  yum:
+  ansible.builtin.yum:
     name: satellite
     state: latest
 
 - name: Run the Satellite installer
-  command: |
+  ansible.builtin.command: |
       satellite-installer --scenario satellite
       --foreman-initial-organization {{ sat_org }}
       --foreman-initial-location {{ sat_location }}

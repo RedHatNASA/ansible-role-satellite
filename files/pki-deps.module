@@ -1,0 +1,5 @@
+[pki-deps]
+name=pki-deps
+stream=10.6
+profiles=
+state=enabled

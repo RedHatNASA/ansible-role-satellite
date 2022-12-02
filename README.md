@@ -1,7 +1,7 @@
 ansible-role-satellite
 =========
 
-A role for deploying Red Hat Satellite 6.9.
+A role for deploying Red Hat Satellite.
 
 Requirements
 ------------
@@ -17,6 +17,16 @@ Role Variables
 
     sat_username: admin
     sat_password: redhat
+
+    sat_org: NASA_JPL
+    sat_location: Pasadena
+
+    sat_version: 6.12
+
+Optional Vars
+
+    # Use this if you do not have DNS records in place to configure /etc/hosts
+    sat_hostname: satellite.example.com
 
 Example Playbook
 ----------------
