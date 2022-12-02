@@ -25,3 +25,14 @@
       --foreman-initial-location {{ sat_location }}
       --foreman-initial-admin-username {{ sat_username }}
       --foreman-initial-admin-password {{ sat_password }}
+
+- name: Check to see if we need a reboot
+  ansible.builtin.command: needs-restarting -r
+  register: result
+  changed_when: result.rc == 1
+  failed_when: result.rc > 1
+  check_mode: no
+
+- name: Reboot server if needed
+  ansible.builtin.reboot:
+  when: result.rc == 1 and allow_reboot == true
