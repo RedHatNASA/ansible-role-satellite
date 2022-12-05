@@ -35,4 +35,4 @@
 
 - name: Reboot server if needed
   ansible.builtin.reboot:
-  when: result.rc == 1 and allow_reboot == true
+  when: result.rc == 1
