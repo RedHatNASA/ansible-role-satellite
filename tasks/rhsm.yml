@@ -22,7 +22,7 @@
     - rhel-7-server-satellite-maintenance-6-rpms
     - rhel-server-rhscl-7-rpms
     - rhel-7-server-ansible-2.9-rpms
-  when: ansible_distribution_major_version == '7' and sat_version >= 6.11
+  when: ansible_distribution_major_version == '7' and sat_version >= {{sat_version}} 
 
 - name: Enable all repositories needed for satellite {{sat_version}} on RHEL 8
   community.general.rhsm_repository:
@@ -33,7 +33,7 @@
     - rhel-8-for-x86_64-baseos-rpms
     - satellite-{{sat_version}}-for-rhel-8-x86_64-rpms
     - satellite-maintenance-{{sat_version}}-for-rhel-8-x86_64-rpms
-  when: ansible_distribution_major_version == '8' and sat_version >= 6.11
+  when: ansible_distribution_major_version == '8' and sat_version >= {{sat_version}} 
 
 - name: Enable ruby:2.7 and postgresql:12 modules for RHEL 8
   ansible.builtin.dnf:
@@ -42,7 +42,7 @@
   with_items:
     - '@ruby:2.7'
     - '@postgresql:12'
-  when: ansible_distribution_major_version == '8' and sat_version >= 6.11
+  when: ansible_distribution_major_version == '8' and sat_version >= {{sat_version}} 
 
 # Workaround for @satellite:el8 until https://github.com/ansible/ansible/pull/76277 is resolved
 - name: Enable satellite:el8 module for RHEL 8
@@ -53,4 +53,4 @@
     - pki-core.module
     - pki-deps.module
     - satellite.module
-  when: ansible_distribution_major_version == '8' and sat_version >= 6.11
+  when: ansible_distribution_major_version == '8' and sat_version >= {{sat_version}} 
