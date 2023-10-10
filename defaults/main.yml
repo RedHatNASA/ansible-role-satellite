@@ -4,4 +4,4 @@ sat_username: admin
 sat_password: redhat
 sat_org: NASA_JPL
 sat_location: Cali
-sat_version: 6.12
+sat_version: 6.13
