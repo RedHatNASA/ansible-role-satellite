@@ -5,24 +5,12 @@
     username: '{{ rhn_username }}'
     password: '{{ rhn_password }}'
     state: present
-    pool: '^(Red Hat Satellite Infrastructure Subscription)$'
+    pool_ids: '{{ pool_id }}'
 
 - name: Disable all RHSM repositories
   community.general.rhsm_repository:
     name: '*'
     state: disabled
-
-- name: Enable all repositories needed for satellite {{sat_version}} on RHEL 7
-  community.general.rhsm_repository:
-    name: '{{ item }}'
-    state: enabled
-  with_items:
-    - rhel-7-server-rpms
-    - rhel-7-server-satellite-{{sat_version}}-rpms
-    - rhel-7-server-satellite-maintenance-6-rpms
-    - rhel-server-rhscl-7-rpms
-    - rhel-7-server-ansible-2.9-rpms
-  when: ansible_distribution_major_version == '7' and sat_version >= 6.11
 
 - name: Enable all repositories needed for satellite {{sat_version}} on RHEL 8
   community.general.rhsm_repository:
