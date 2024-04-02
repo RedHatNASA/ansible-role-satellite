@@ -7,14 +7,3 @@ sat_location: Cali
 sat_version: 6.14
 
 pool_id: 8aca43dd771bf31101771c0231f906a5i
-
-firewalld_ports:
-  - http
-  - https
-  - dns
-  - dhcp
-  - 5647/tcp
-  - 8000/tcp
-  - 8140/tcp
-  - 9090/tcp
-  - 5000/tcp 
