@@ -11,9 +11,9 @@
     state: started
     enabled: yes
 
-- name: Open Satellite related port on the firewall
+- name: Open Satellite related ports on the firewall
   ansible.posix.firewalld:
-    service: http
+    service: '{{ item }}'
     permanent: true
     state: enabled
     immediate: true
