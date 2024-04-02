@@ -16,51 +16,60 @@
     service: http
     permanent: true
     state: enabled
+    immediate: true
 
 - name: Open HTTPS port on the firewall
   ansible.posix.firewalld:
     service: https
     permanent: true
     state: enabled
+    immediate: true
 
 - name: Open DNS port on the firewall
   ansible.posix.firewalld:
     service: dns
     permanent: true
     state: enabled
+    immediate: true
 
 - name: Open DHCP port on the firewall
   ansible.posix.firewalld:
     service: dhcp
     permanent: true
     state: enabled
+    immediate: true
 
 - name: Open port 5647/tcp on the firewall
   ansible.posix.firewalld:
     port: 5647/tcp
     permanent: true
     state: enabled
+    immediate: true
 
 - name: Open port 8000/tcp on the firewall
   ansible.posix.firewalld:
     port: 8000/tcp
     permanent: true
     state: enabled
+    immediate: true
 
 - name: Open port 8140/tcp on the firewall
   ansible.posix.firewalld:
     port: 8140/tcp
     permanent: true
     state: enabled
+    immediate: true
 
 - name: Open port 9090/tcp on the firewall
   ansible.posix.firewalld:
     port: 9090/tcp
     permanent: true
     state: enabled
+    immediate: true
 
 - name: Open port 5000/tcp on the firewall
   ansible.posix.firewalld:
     port: 5000/tcp
     permanent: true
     state: enabled
+    immediate: true
