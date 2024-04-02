@@ -31,18 +31,6 @@ Optional Vars
     # Use this if you do not have DNS records in place to configure /etc/hosts
     sat_hostname: satellite.example.com
 
-    # Use this list variable to override the default ports opened for firewalld
-    firewalld_ports:
-      - http
-      - https
-      - dns
-      - dhcp
-      - 5647/tcp
-      - 8000/tcp
-      - 8140/tcp
-      - 9090/tcp
-      - 5000/tcp
-
 Example Playbook
 ----------------
 
